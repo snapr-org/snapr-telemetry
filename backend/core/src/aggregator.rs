@@ -38,15 +38,12 @@ pub struct ChainEntry {
 /// number of nodes to connect.
 static FIRST_PARTY_NETWORKS: HashSet<&'static str> = {
     let mut set = HashSet::new();
-    set.insert("Polkadot");
-    set.insert("Kusama");
-    set.insert("Westend");
-    set.insert("Rococo");
+    set.insert("snapr");
     set
 };
 
 /// Max number of nodes allowed to connect to the telemetry server.
-const THIRD_PARTY_NETWORKS_MAX_NODES: usize = 500;
+const THIRD_PARTY_NETWORKS_MAX_NODES: usize = 0;
 
 impl Aggregator {
     pub fn new(denylist: HashSet<String>) -> Self {
@@ -371,7 +368,7 @@ impl Handler<GetHealth> for Aggregator {
     }
 }
 
-/// First party networks (Polkadot, Kusama etc) are allowed any number of nodes.
+/// First party networks (snapr) are allowed any number of nodes.
 /// Third party networks are allowed `THIRD_PARTY_NETWORKS_MAX_NODES` nodes and
 /// no more.
 fn max_nodes(label: &str) -> usize {

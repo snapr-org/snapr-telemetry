@@ -26,7 +26,7 @@ use util::{Locator, LocatorFactory};
 const VERSION: &str = env!("CARGO_PKG_VERSION");
 const AUTHORS: &str = env!("CARGO_PKG_AUTHORS");
 const NAME: &str = "Substrate Telemetry Backend";
-const ABOUT: &str = "This is the Telemetry Backend that injects and provide the data sent by Substrate/Polkadot nodes";
+const ABOUT: &str = "This is the Telemetry Backend that injects and provide the data sent by snapr nodes";
 
 #[derive(Clap, Debug)]
 #[clap(name = NAME, version = VERSION, author = AUTHORS, about = ABOUT)]

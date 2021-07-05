@@ -38,12 +38,13 @@ pub struct ChainEntry {
 /// number of nodes to connect.
 static FIRST_PARTY_NETWORKS: HashSet<&'static str> = {
     let mut set = HashSet::new();
-    set.insert("snapr");
+    set.insert("snapr_mainnet");
+    set.insert("snapr_testnet");
     set
 };
 
 /// Max number of nodes allowed to connect to the telemetry server.
-const THIRD_PARTY_NETWORKS_MAX_NODES: usize = 0;
+const THIRD_PARTY_NETWORKS_MAX_NODES: usize = 10;
 
 impl Aggregator {
     pub fn new(denylist: HashSet<String>) -> Self {
